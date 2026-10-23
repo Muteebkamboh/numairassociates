@@ -1,24 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import { MotionConfig } from 'framer-motion';
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import Stats from './components/Stats';
+import Philosophy from './components/Philosophy';
+import Leadership from './components/Leadership';
+import Projects from './components/Projects';
+import Services from './components/Services';
+import Contact from './components/Contact';
+import Footer from './components/Footer';
+
+/*
+  Earlier sections (SelectedProperties, FeaturedResidence, Locations, Journal) are kept in
+  src/components/ and can be added back here at any time.
+*/
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    // reducedMotion="user" turns movement off for visitors who prefer less motion
+    <MotionConfig reducedMotion="user">
+      {/* Framed canvas with fine side borders, as in the original design */}
+      <div className="mx-auto min-h-screen max-w-[1440px] overflow-x-clip border-x border-line bg-ivory">
+        <Navbar />
+        <main>
+          <Hero />
+          <Stats />
+          <Philosophy />
+          <Leadership />
+          <Projects />
+          <Services />
+          <Contact />
+        </main>
+        <Footer />
+      </div>
+    </MotionConfig>
   );
 }
 
