@@ -81,7 +81,7 @@ export function SectionHeader({ eyebrow, title, children, className = '', align 
       <Reveal>
         {eyebrow && <Eyebrow className={dark ? 'text-ink-muted' : 'text-taupe'}>{eyebrow}</Eyebrow>}
         <h2
-          className={`mt-5 font-display text-[32px] font-medium leading-[1.1] tracking-[-0.025em] sm:text-[42px] lg:text-[48px] ${
+          className={`heading-section mt-5 ${
             dark ? 'text-ink-text' : 'text-charcoal'
           }`}
         >

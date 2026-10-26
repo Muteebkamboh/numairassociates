@@ -69,7 +69,7 @@ function Stats() {
                 className="h-7 w-7 text-lime transition-transform duration-500 group-hover:-translate-y-0.5 sm:h-8 sm:w-8"
               />
               <div>
-                <p className="font-sans text-[40px] font-medium leading-none tracking-tight sm:text-[56px] lg:text-[60px]">
+                <p className="font-display text-[38px] font-bold leading-none tracking-tight sm:text-[50px] lg:text-[54px]">
                   <CountUp to={stat.value} suffix={stat.suffix} />
                 </p>
                 <p className="mt-3 text-[13px] text-ink-muted sm:text-sm">{stat.label}</p>

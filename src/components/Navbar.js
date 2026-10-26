@@ -199,7 +199,7 @@ function Navbar() {
                     className="group flex items-baseline gap-4 py-4 transition-colors duration-300 hover:text-gold"
                   >
                     <span className="text-[11px] tracking-label text-gold">0{index + 1}</span>
-                    <span className="font-display text-2xl font-medium tracking-[-0.02em] lg:text-3xl">
+                    <span className="font-display text-2xl font-semibold tracking-[-0.02em] lg:text-3xl">
                       {link.label}
                     </span>
                   </a>

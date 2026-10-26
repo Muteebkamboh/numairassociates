@@ -4,7 +4,7 @@ import App from './App';
 test('renders the hero heading', () => {
   render(<App />);
   const heading = screen.getByRole('heading', { level: 1 });
-  expect(heading).toHaveTextContent(/find the right plot\. invest with confidence\./i);
+  expect(heading).toHaveTextContent(/the right property\. a smarter investment\./i);
 });
 
 test('renders six projects, six services and the CEO section', () => {

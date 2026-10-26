@@ -65,19 +65,18 @@ function Hero() {
           <motion.h1
             variants={fadeUp}
             // Slightly smaller on short laptop screens so the composition fits the first view
-            className="mt-6 font-serif text-[38px] font-normal leading-[1.08] tracking-[-0.01em] text-[#F4EEE2] min-[400px]:text-[42px] sm:text-[56px] lg:text-[60px] xl:text-[68px] lg:[@media(max-height:760px)]:text-[54px]"
+            className="heading-hero mt-6 text-[34px] text-[#F4EEE2] min-[400px]:text-[38px] sm:text-[50px] lg:text-[56px] xl:text-[62px] lg:[@media(max-height:760px)]:text-[52px]"
           >
-            <span className="block">Find the Right Plot.</span>{' '}
-            <span className="block text-gold">Invest With Confidence.</span>
+            <span className="block">The Right Property.</span>{' '}
+            <span className="block text-gold">A Smarter Investment.</span>
           </motion.h1>
 
           <motion.p
             variants={fadeUp}
             className="mt-7 max-w-[500px] text-[15px] leading-relaxed text-ink-text/75 sm:text-base"
           >
-            From selecting the right plot to making informed property investments, Numair
-            Associates brings market insight, personalized consultation, and transparent guidance
-            to every decision.
+            From plot selection to property consultation, we help you explore opportunities,
+            understand the market, and make informed real estate decisions with confidence.
           </motion.p>
 
           <motion.div

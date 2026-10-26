@@ -11,7 +11,7 @@ function Consultation() {
               <span className="h-px w-10 bg-accent" aria-hidden="true" />
               <Eyebrow>Your Property Journey</Eyebrow>
             </div>
-            <h2 className="mt-6 font-serif text-[38px] font-normal leading-[1.08] tracking-[-0.01em] sm:text-[52px] lg:text-[56px]">
+            <h2 className="heading-section mt-6">
               Clarity Before Every <span className="text-[#8C7550]">Property Decision.</span>
             </h2>
           </Reveal>
@@ -37,12 +37,12 @@ function Consultation() {
           {consultationSteps.map((step, index) => (
             <Reveal key={step.number} as="li" delay={index * 0.12} className="group flex flex-col bg-ivory p-8 transition-colors duration-500 hover:bg-paper lg:p-9">
               <div className="flex items-center gap-4">
-                <span className="font-serif text-[44px] leading-none text-[#8C7550] lg:text-[52px]">
+                <span className="font-display text-[40px] font-semibold leading-none text-[#8C7550] lg:text-[46px]">
                   {step.number}
                 </span>
                 <span className="h-px flex-1 bg-accent/40 transition-colors duration-500 group-hover:bg-accent" aria-hidden="true" />
               </div>
-              <h3 className="mt-10 font-display text-[20px] font-medium leading-tight tracking-[-0.02em] sm:text-[22px]">
+              <h3 className="heading-card mt-10 text-[19px] sm:text-[21px]">
                 {step.title}
               </h3>
               <p className="mt-4 text-[14px] leading-relaxed text-charcoal/70">{step.text}</p>

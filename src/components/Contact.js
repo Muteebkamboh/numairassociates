@@ -93,7 +93,7 @@ function Contact() {
         <div className="lg:col-span-5">
           <Reveal>
             <Eyebrow className="text-ink-muted">Enquiries</Eyebrow>
-            <h2 className="mt-6 font-display text-[36px] font-medium leading-[1.08] tracking-[-0.03em] sm:text-[50px] lg:text-[56px]">
+            <h2 className="heading-section mt-6">
               Let’s Find Your <br className="hidden sm:block" />
               Next Place.
             </h2>

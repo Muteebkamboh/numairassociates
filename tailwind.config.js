@@ -29,9 +29,9 @@ module.exports = {
         },
       },
       fontFamily: {
-        // Headings: simple, modern and premium
-        display: ['Manrope', '"DM Sans"', '"Helvetica Neue"', 'Arial', 'sans-serif'],
-        // Kept only for the footer wordmark, the CEO signature and philosophy numerals
+        // Headings: bold, modern sans-serif (see the heading classes in src/index.css)
+        display: ['Montserrat', '"Helvetica Neue"', 'Arial', 'sans-serif'],
+        // Only used by the unused earlier sections (Journal, Locations, ...); not loaded any more
         serif: ['"Bodoni Moda"', 'Didot', 'Georgia', 'serif'],
         sans: ['"DM Sans"', '"Helvetica Neue"', 'Arial', 'sans-serif'],
       },

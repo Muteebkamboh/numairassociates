@@ -32,7 +32,7 @@ function Footer() {
         <Reveal y={16}>
           <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-12">
             <div className="sm:col-span-2 lg:col-span-4">
-              <a href="#home" className="font-serif text-xl tracking-[0.18em]">
+              <a href="#home" className="font-display text-lg font-bold tracking-[0.16em]">
                 NUMAIR ASSOCIATES
               </a>
               <p className="mt-5 max-w-xs text-[14px] leading-relaxed text-ink-muted">

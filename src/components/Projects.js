@@ -26,7 +26,7 @@ function ProjectCard({ project, index }) {
           <span>{project.location}</span>
         </div>
         <div className="mt-3 flex items-start justify-between gap-6">
-          <h3 className="font-display text-[24px] font-medium leading-tight tracking-[-0.02em] sm:text-[26px]">{project.name}</h3>
+          <h3 className="heading-card text-[22px] sm:text-[24px]">{project.name}</h3>
           <span className="mt-1 flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-charcoal/20 transition-colors duration-300 group-hover:border-charcoal group-hover:bg-charcoal group-hover:text-ivory">
             <ArrowIcon className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" />
           </span>

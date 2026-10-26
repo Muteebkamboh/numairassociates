@@ -17,7 +17,7 @@ function ServiceCard({ service }) {
         <span className="text-[11px] tracking-label text-taupe">{service.number}</span>
       </div>
 
-      <h3 className="mt-12 font-display text-[24px] font-medium leading-tight tracking-[-0.02em] sm:mt-14 sm:text-[26px]">
+      <h3 className="heading-card mt-12 text-[22px] sm:mt-14 sm:text-[24px]">
         {service.title}
       </h3>
       <p className="mt-4 max-w-sm text-[15px] leading-relaxed text-charcoal/70">{service.text}</p>

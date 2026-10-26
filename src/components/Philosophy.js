@@ -9,7 +9,7 @@ function Philosophy() {
         <div className="lg:col-span-5">
           <Reveal>
             <Eyebrow className="text-charcoal/55">Our Philosophy</Eyebrow>
-            <h2 className="mt-7 font-display text-[28px] font-medium leading-[1.22] tracking-[-0.025em] sm:text-[36px] lg:text-[40px]">
+            <h2 className="heading-section mt-7 text-[26px] leading-[1.25] sm:text-[32px] lg:text-[34px]">
               We believe every property decision deserves careful research, clear guidance, and a
               long-term perspective —{' '}
               <span className="text-charcoal/50">helping our clients choose opportunities with
@@ -34,11 +34,11 @@ function Philosophy() {
               delay={index * 0.12}
               className="grid grid-cols-[4.5rem_1fr] gap-x-4 border border-charcoal/10 bg-clay px-6 py-10 sm:grid-cols-[7rem_1fr] sm:px-8 lg:py-12"
             >
-              <span className="font-serif text-[44px] leading-none text-[#8C7550] sm:text-[64px]">
+              <span className="font-display text-[40px] font-semibold leading-none text-[#8C7550] sm:text-[52px]">
                 {principle.number}
               </span>
               <div className="pt-1 sm:pt-2">
-                <h3 className="font-display text-[22px] font-medium leading-tight tracking-[-0.02em] sm:text-[26px]">
+                <h3 className="heading-card text-[20px] sm:text-[24px]">
                   {principle.title}
                 </h3>
                 <p className="mt-4 max-w-md text-[15px] leading-relaxed text-charcoal/75">

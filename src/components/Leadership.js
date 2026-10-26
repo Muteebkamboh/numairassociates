@@ -10,7 +10,7 @@ function PortraitPlaceholder() {
       aria-label={`Portrait of ${ceo.name} to be added`}
       className="relative flex h-full w-full items-center justify-center bg-[radial-gradient(ellipse_at_30%_20%,#3A3733_0%,#2B2926_45%,#1E1D1B_100%)]"
     >
-      <span className="font-serif text-[180px] leading-none text-ivory/10 sm:text-[240px]">N</span>
+      <span className="font-display text-[180px] font-extrabold leading-none text-ivory/10 sm:text-[240px]">N</span>
       <span className="absolute bottom-6 left-6 text-[10px] uppercase tracking-label text-taupe">
         Portrait to be added
       </span>
@@ -58,7 +58,7 @@ function Leadership() {
               <PortraitPlaceholder />
             )}
             <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent px-6 pb-6 pt-20">
-              <p className="font-serif text-xl text-ivory">{ceo.name}</p>
+              <p className="font-display text-lg font-semibold text-ivory">{ceo.name}</p>
               <p className="mt-1 text-[10px] uppercase tracking-label text-gold">{ceo.title}</p>
             </div>
           </motion.div>
@@ -71,7 +71,7 @@ function Leadership() {
               <span className="h-px w-10 bg-gold" aria-hidden="true" />
               <Eyebrow className="text-gold">Leadership &amp; Vision</Eyebrow>
             </div>
-            <h2 className="mt-7 font-serif text-[44px] font-normal leading-[1.05] tracking-[-0.01em] sm:text-[60px] lg:text-[64px]">
+            <h2 className="heading-section mt-7 text-[34px] sm:text-[42px] lg:text-[48px]">
               {ceo.name}
             </h2>
             <p className="mt-4 text-[12px] uppercase tracking-label text-ivory/55">
@@ -90,7 +90,7 @@ function Leadership() {
           <ul className="mt-12 grid gap-6 sm:grid-cols-3 sm:gap-8">
             {ceo.approach.map((item, index) => (
               <Reveal key={item.title} as="li" delay={0.4 + index * 0.1} className="border-t border-gold/30 pt-5">
-                <p className="font-display text-[17px] font-medium tracking-[-0.01em] text-ivory">
+                <p className="heading-card text-[16px] text-ivory">
                   {item.title}
                 </p>
                 <p className="mt-2 text-[13px] leading-relaxed text-ivory/55">{item.text}</p>

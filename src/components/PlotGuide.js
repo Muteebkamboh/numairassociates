@@ -41,7 +41,7 @@ function PlotGuide() {
                     <Icon name={point.icon} className="h-5 w-5" />
                   </span>
                   <div>
-                    <h3 className="font-display text-[20px] font-medium leading-tight tracking-[-0.02em] sm:text-[22px]">
+                    <h3 className="heading-card text-[19px] sm:text-[21px]">
                       {point.title}
                     </h3>
                     <p className="mt-3 text-[15px] leading-relaxed text-charcoal/70">{point.text}</p>
