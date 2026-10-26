@@ -67,8 +67,8 @@ function Hero() {
             // Slightly smaller on short laptop screens so the composition fits the first view
             className="heading-hero mt-6 text-[34px] text-[#F4EEE2] min-[400px]:text-[38px] sm:text-[50px] lg:text-[56px] xl:text-[62px] lg:[@media(max-height:760px)]:text-[52px]"
           >
-            <span className="block">The Right Property.</span>{' '}
-            <span className="block text-gold">A Smarter Investment.</span>
+            <span className="block">The Right Property</span>{' '}
+            <span className="block text-gold">A Smarter Investment</span>
           </motion.h1>
 
           <motion.p
