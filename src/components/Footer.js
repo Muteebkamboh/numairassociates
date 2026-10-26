@@ -33,11 +33,11 @@ function Footer() {
           <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-12">
             <div className="sm:col-span-2 lg:col-span-4">
               <a href="#home" className="font-serif text-xl tracking-[0.18em]">
-                THE SIGNATURE ESTATE
+                NUMAIR ASSOCIATES
               </a>
               <p className="mt-5 max-w-xs text-[14px] leading-relaxed text-ink-muted">
-                Exceptional properties in Lahore, selected for their architecture, location and
-                enduring value.
+                Real estate consultants for plots, property and investment decisions, with
+                transparent guidance from first conversation to final step.
               </p>
             </div>
 
@@ -81,7 +81,7 @@ function Footer() {
           </div>
 
           <div className="mt-16 flex flex-col gap-3 border-t border-ink-line pt-6 text-[12px] text-ink-muted/70 sm:flex-row sm:justify-between">
-            <p>© {year} The Signature Estate. All rights reserved.</p>
+            <p>© {year} Numair Associates. All rights reserved.</p>
             <p>Photography via Pexels. Projects and figures shown are illustrative.</p>
           </div>
         </Reveal>

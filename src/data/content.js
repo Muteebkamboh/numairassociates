@@ -1,5 +1,5 @@
 /*
-  Site content for The Signature Estate.
+  Site content for Numair Associates.
 
   All photographs live in src/assets/images/ and are free to use under the Pexels License
   (https://www.pexels.com/license/). Source pages are listed next to each import so they
@@ -8,7 +8,8 @@
   Property names, details and prices below are ILLUSTRATIVE EXAMPLES, not live listings.
 */
 
-import heroVilla from '../assets/images/hero-villa.jpg'; // pexels.com/photo/10610733 — alleksana
+// HERO BACKGROUND IMAGE: the client's own photograph (also kept at src/images/Hero.png)
+import heroImage from '../assets/images/Hero.png';
 import propertyOne from '../assets/images/property-one.jpg'; // pexels.com/photo/36540391 — Raymond Petrik
 import propertyTwo from '../assets/images/property-two.jpg'; // pexels.com/photo/6342356 — Roman Odintsov
 import propertyThree from '../assets/images/property-three.jpg'; // pexels.com/photo/28443032 — maks057kh
@@ -23,9 +24,13 @@ import projectHorizon from '../assets/images/project-horizon.jpg'; // pexels.com
 import projectHeritage from '../assets/images/project-heritage.jpg'; // pexels.com/photo/18887138 — vika-glitter
 // Client's logo (from src/images/Logo.png.png, with the empty white margin trimmed)
 import logoImage from '../assets/images/logo.png';
+// Same logo with a transparent background and ivory lettering, for the dark hero navbar.
+// Generated from logo.png (white removed, navy recoloured to ivory, gold kept).
+import logoLightImage from '../assets/images/logo-light.png';
 
 export const logo = {
   src: logoImage,
+  lightSrc: logoLightImage,
   alt: 'Numair Associates — Real Estate Consultants',
   width: 1047,
   height: 843,
@@ -46,17 +51,16 @@ function findCeoPhoto() {
 }
 
 export const navLinks = [
-  { label: 'Philosophy', href: '#philosophy' },
+  { label: 'Home', href: '#home' },
+  { label: 'Properties', href: '#projects' },
+  { label: 'About', href: '#philosophy' },
   { label: 'Leadership', href: '#leadership' },
-  { label: 'Projects', href: '#projects' },
   { label: 'Services', href: '#services' },
   { label: 'Contact', href: '#contact' },
 ];
 
-// The three links shown inline on desktop; the rest live in the menu
-export const primaryLinks = navLinks.filter((link) =>
-  ['#projects', '#services', '#contact'].includes(link.href)
-);
+// The links shown in the centre of the navbar on desktop; the full list lives in the mobile menu
+export const primaryLinks = navLinks.filter((link) => link.href !== '#leadership');
 
 /*
   Statistics: ILLUSTRATIVE design placeholders, not verified business figures.
@@ -65,18 +69,24 @@ export const primaryLinks = navLinks.filter((link) =>
 export const stats = [
   { value: 1, suffix: '+', label: 'Years of Vision', icon: 'compass' },
   { value: 6, suffix: '+', label: 'Selected Projects', icon: 'building' },
-  { value: 4, suffix: '', label: 'Core Services', icon: 'layers' },
+  { value: 6, suffix: '', label: 'Core Services', icon: 'layers' },
   { value: 100, suffix: '%', label: 'Commitment to Quality', icon: 'seal' },
 ];
 
 // Proposed website copy, not a verified biography
 export const ceo = {
-  name: 'Numair',
+  name: 'Numair Naseer Khan',
   title: 'Chief Executive Officer',
   photo: findCeoPhoto(),
-  photoAlt: 'Portrait of Numair, Chief Executive Officer of The Signature Estate',
-  statement: 'Building with intention. Leading with perspective.',
-  bio: 'Numair leads The Signature Estate with a focus on thoughtful property selection, enduring design, and relationships built on trust. His approach places clarity, quality, and long-term value at the centre of every decision.',
+  photoAlt: 'Portrait of Numair Naseer Khan, Chief Executive Officer of Numair Associates',
+  statement: 'Every client deserves clear answers before an important property decision.',
+  bio: 'Numair Naseer Khan leads Numair Associates with a client-first approach to real estate. He works closely with each client to understand their goals, evaluate opportunities with care, and offer transparent guidance at every stage — from choosing the right plot to planning a long-term investment.',
+  // The principles behind his approach (no credentials or figures are claimed here)
+  approach: [
+    { title: 'Client-first', text: 'Advice shaped around your goals, priorities and timeline.' },
+    { title: 'Transparent', text: 'Clear information and honest conversations at every step.' },
+    { title: 'Long-term', text: 'A focus on lasting value rather than short-term trends.' },
+  ],
 };
 
 /*
@@ -137,35 +147,49 @@ export const projects = [
 export const services = [
   {
     number: '01',
-    title: 'Property Advisory',
-    text: 'Make informed property decisions with clear guidance shaped around your priorities.',
-    icon: 'compass',
+    title: 'Real Estate Consultancy',
+    text: 'Receive personalized property guidance to clarify your goals, evaluate available opportunities, and make informed real estate decisions.',
+    icon: 'chat',
   },
   {
     number: '02',
-    title: 'Residential Sales',
-    text: 'Discover homes selected for their design, location, and everyday livability.',
-    icon: 'home',
-  },
-  {
-    number: '03',
-    title: 'Investment Guidance',
-    text: 'Evaluate opportunities with a considered perspective on location, quality, and long-term potential.',
+    title: 'Investment Advisory',
+    text: 'Explore property investment opportunities with a focus on market fundamentals, risk awareness, investment objectives, and long-term potential.',
     icon: 'chart',
   },
   {
+    number: '03',
+    title: 'Property & Market Analysis',
+    text: 'Understand location trends, comparable properties, pricing factors, and market conditions before committing to a property.',
+    icon: 'search',
+  },
+  {
     number: '04',
-    title: 'Portfolio Consulting',
-    text: 'Bring clarity and direction to your property portfolio through a more deliberate approach.',
-    icon: 'layers',
+    title: 'Property Sale & Purchase',
+    text: 'Navigate property transactions with structured guidance, clear communication, and support throughout the buying or selling process.',
+    icon: 'handshake',
+  },
+  {
+    number: '05',
+    title: 'Construction',
+    text: 'Plan your next development with practical guidance on project requirements, planning considerations, and construction coordination.',
+    icon: 'building',
+  },
+  {
+    number: '06',
+    title: 'Project Marketing',
+    text: 'Present real estate projects professionally through strategic positioning, compelling property presentation, and targeted marketing support.',
+    icon: 'megaphone',
   },
 ];
 
 export const enquiryTypes = [
-  'Buying a home',
+  'Buying a plot or property',
   'Selling a property',
-  'Investment guidance',
-  'Portfolio consulting',
+  'Investment advisory',
+  'Property & market analysis',
+  'Construction',
+  'Project marketing',
   'Something else',
 ];
 
@@ -177,9 +201,58 @@ export const contactDetails = {
 };
 
 export const hero = {
-  image: heroVilla,
-  imageAlt: 'White modern villa with tall glass windows and an olive tree in warm afternoon light',
+  // HERO BACKGROUND IMAGE: src/assets/images/Hero.png (imported at the top of this file)
+  background: heroImage,
+  imageAlt: 'Modern luxury residence with an infinity pool overlooking a city skyline at sunset',
 };
+
+// "Find a Plot That Fits Your Vision" section
+export const plotGuide = {
+  // Representative aerial photograph (public/images/photo3.png), not a specific development
+  image: `${process.env.PUBLIC_URL}/images/photo3.png`,
+  imageAlt: 'Aerial view of a planned residential community with tree-lined boulevards at sunset',
+  points: [
+    {
+      title: 'Purpose-Driven Selection',
+      text: 'Clarify whether your priority is building a home, holding an investment, or pursuing a development opportunity.',
+      icon: 'compass',
+    },
+    {
+      title: 'Location & Market Insight',
+      text: 'Evaluate relevant location factors, accessibility, surrounding development, market conditions, and potential considerations.',
+      icon: 'pin',
+    },
+    {
+      title: 'Guided Decision-Making',
+      text: 'Compare suitable options, ask the right questions, and move forward with greater clarity through personalized consultation.',
+      icon: 'seal',
+    },
+  ],
+};
+
+// "Clarity Before Every Property Decision" section
+export const consultationSteps = [
+  {
+    number: '01',
+    title: 'Understand Your Goals',
+    text: 'We begin by learning about your requirements, investment priorities, intended use, and budget considerations.',
+  },
+  {
+    number: '02',
+    title: 'Explore Suitable Opportunities',
+    text: 'Identify relevant plots and property options based on your needs and available market information.',
+  },
+  {
+    number: '03',
+    title: 'Evaluate the Details',
+    text: 'Review relevant location factors, pricing context, property information, and questions that should be clarified before proceeding.',
+  },
+  {
+    number: '04',
+    title: 'Plan Your Next Move',
+    text: 'Receive clear guidance on the next steps so you can make a more informed decision.',
+  },
+];
 
 export const properties = [
   {
@@ -212,7 +285,7 @@ export const principles = [
   {
     number: '01',
     title: 'Architecture first',
-    text: 'We look for homes with clear plans, honest materials and natural light — qualities that remain valuable long after trends change.',
+    text: 'Every strong investment begins with the right foundation. We help clients assess plot potential, location fundamentals, market conditions, and future value before making a decision.',
   },
   {
     number: '02',

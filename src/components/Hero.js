@@ -15,79 +15,89 @@ const fadeUp = {
 
 function Hero() {
   return (
-    // On desktop the hero is exactly one screen tall minus the 5rem navbar, so the whole
-    // composition is visible without scrolling. Phones and tablets use a natural stacked
-    // layout with the photograph first and the text underneath.
+    // Full-screen cinematic hero. -mt-20 pulls it up underneath the 5rem sticky navbar, so the
+    // transparent navbar sits over the photograph. Capped at 1000px tall on very tall screens.
     <section
       id="home"
-      className="border-b border-line lg:h-[calc(100vh-5rem)] lg:min-h-[600px] lg:max-h-[960px] supports-[height:100svh]:lg:h-[calc(100svh-5rem)]"
+      className="relative isolate -mt-20 flex min-h-[100svh] flex-col overflow-hidden bg-ink text-ink-text lg:min-h-[min(100svh,1000px)]"
     >
-      <Container className="grid gap-10 pb-14 pt-5 sm:gap-12 sm:pt-8 lg:h-full lg:grid-cols-12 lg:gap-12 lg:py-10 xl:gap-16">
-        {/* Copy: below the photo on small screens, left column on desktop */}
-        <motion.div
-          variants={stagger}
-          initial="hidden"
-          animate="visible"
-          className="order-2 flex flex-col justify-between lg:order-1 lg:col-span-5 lg:py-4"
-        >
-          <div>
-            <motion.div variants={fadeUp}>
-              <Eyebrow>Curated Real Estate</Eyebrow>
-            </motion.div>
+      {/*
+        Background photograph: src/assets/images/Hero.png, set by `hero.background` in
+        src/data/content.js. The residence sits on the right of the photo, so on narrow
+        screens the image is shifted right to keep it in view.
+      */}
+      <motion.div
+        role="img"
+        aria-label={hero.imageAlt}
+        initial={{ opacity: 0, scale: 1.04 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 1.6, ease }}
+        className="absolute inset-0 -z-20 bg-cover bg-[position:80%_center] bg-no-repeat lg:bg-[position:center_center]"
+        style={{ backgroundImage: `url(${hero.background})` }}
+      />
 
-            <motion.h1
-              variants={fadeUp}
-              // Slightly smaller on short laptop screens so the hero still fits in one view
-              className="mt-6 font-display text-[36px] font-medium leading-[1.08] tracking-[-0.03em] min-[400px]:text-[40px] sm:text-[52px] lg:text-[46px] xl:text-[56px] lg:[@media(max-height:820px)]:text-[44px]"
-            >
-              <span className="block">Spaces to live.</span>{' '}
-              <span className="block">
-                Places to <span className="text-charcoal/50">belong.</span>
-              </span>{' '}
-              <span className="block">Value for generations.</span>
-            </motion.h1>
+      {/* Dark overlays: strongest on the left (text), softer at the bottom and top (navbar) */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 -z-10 bg-gradient-to-r from-black/80 via-black/55 to-black/35 lg:from-black/80 lg:via-black/40 lg:to-transparent"
+      />
+      <div
+        aria-hidden="true"
+        className="absolute inset-x-0 bottom-0 -z-10 h-2/5 bg-gradient-to-t from-black/75 to-transparent"
+      />
+      <div
+        aria-hidden="true"
+        className="absolute inset-x-0 top-0 -z-10 h-40 bg-gradient-to-b from-black/60 to-transparent"
+      />
 
-            <motion.p
-              variants={fadeUp}
-              className="mt-7 max-w-sm text-[15px] leading-relaxed text-charcoal/70"
-            >
-              A considered collection of exceptional properties, selected for their architecture,
-              location, and enduring value.
-            </motion.p>
+      {/* Main copy, left aligned and vertically centred (top padding clears the navbar) */}
+      <Container className="flex flex-1 items-center pb-16 pt-32 lg:pb-20 lg:pt-28">
+        <motion.div variants={stagger} initial="hidden" animate="visible" className="max-w-[760px]">
+          <motion.div variants={fadeUp}>
+            <Eyebrow className="text-[10px] leading-relaxed text-gold sm:text-[11px]">
+              {/* Each phrase stays on one line when the eyebrow wraps on phones */}
+              <span className="whitespace-nowrap">Plots&nbsp;&nbsp;/</span>{'  '}
+              <span className="whitespace-nowrap">Property Consultation&nbsp;&nbsp;/</span>{'  '}
+              <span className="whitespace-nowrap">Investment Advisory</span>
+            </Eyebrow>
+          </motion.div>
 
-            <motion.div variants={fadeUp} className="mt-9">
-              <a
-                href="#projects"
-                className="group flex items-center justify-center gap-4 bg-charcoal px-7 py-4 text-[12px] uppercase tracking-[0.18em] text-ivory transition-colors duration-300 hover:bg-charcoal/85 sm:inline-flex"
-              >
-                Explore Properties
-                <ArrowIcon className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-              </a>
-            </motion.div>
-          </div>
+          <motion.h1
+            variants={fadeUp}
+            // Slightly smaller on short laptop screens so the composition fits the first view
+            className="mt-6 font-serif text-[38px] font-normal leading-[1.08] tracking-[-0.01em] text-[#F4EEE2] min-[400px]:text-[42px] sm:text-[56px] lg:text-[60px] xl:text-[68px] lg:[@media(max-height:760px)]:text-[54px]"
+          >
+            <span className="block">Find the Right Plot.</span>{' '}
+            <span className="block text-gold">Invest With Confidence.</span>
+          </motion.h1>
+
+          <motion.p
+            variants={fadeUp}
+            className="mt-7 max-w-[500px] text-[15px] leading-relaxed text-ink-text/75 sm:text-base"
+          >
+            From selecting the right plot to making informed property investments, Numair
+            Associates brings market insight, personalized consultation, and transparent guidance
+            to every decision.
+          </motion.p>
 
           <motion.div
             variants={fadeUp}
-            className="mt-10 flex items-center justify-between border-t border-line pt-5 text-[11px] uppercase tracking-label text-taupe lg:mt-8"
+            className="mt-10 flex flex-col gap-6 sm:flex-row sm:items-center sm:gap-10"
           >
-            <span>Lahore, Pakistan</span>
-            <span className="hidden sm:inline">31.52° N · 74.36° E</span>
+            <a
+              href="#plots"
+              className="group flex items-center justify-center gap-4 rounded-[2px] bg-gold px-8 py-4 text-[12px] font-medium uppercase tracking-[0.18em] text-ink transition-colors duration-300 hover:bg-gold-light sm:inline-flex"
+            >
+              Explore Opportunities
+              <ArrowIcon className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+            </a>
+            <a
+              href="#contact"
+              className="self-center border-b border-ink-text/40 pb-1 text-[12px] uppercase tracking-[0.18em] text-ink-text transition-colors duration-300 hover:border-gold hover:text-gold sm:self-auto"
+            >
+              Book a Consultation
+            </a>
           </motion.div>
-        </motion.div>
-
-        {/* Photograph: first on small screens, right column on desktop */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1.2, ease: 'easeOut' }}
-          className="order-1 aspect-[4/3] overflow-hidden bg-line sm:aspect-[16/10] lg:order-2 lg:col-span-7 lg:aspect-auto lg:h-full"
-        >
-          <img
-            src={hero.image}
-            alt={hero.imageAlt}
-            fetchPriority="high"
-            className="h-full w-full object-cover object-[60%_center]"
-          />
         </motion.div>
       </Container>
     </section>

@@ -10,9 +10,10 @@ function Philosophy() {
           <Reveal>
             <Eyebrow className="text-charcoal/55">Our Philosophy</Eyebrow>
             <h2 className="mt-7 font-display text-[28px] font-medium leading-[1.22] tracking-[-0.025em] sm:text-[36px] lg:text-[40px]">
-              We believe a home should be chosen the way it is designed —{' '}
-              <span className="text-charcoal/50">slowly, carefully,</span> and with the next
-              generation in mind.
+              We believe every property decision deserves careful research, clear guidance, and a
+              long-term perspective —{' '}
+              <span className="text-charcoal/50">helping our clients choose opportunities with
+              confidence.</span>
             </h2>
           </Reveal>
 

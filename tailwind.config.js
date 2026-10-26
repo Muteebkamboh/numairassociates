@@ -22,6 +22,11 @@ module.exports = {
           muted: '#AAA9A2',
         },
         lime: '#C6F238',
+        // Champagne gold for the dark hero and navbar
+        gold: {
+          DEFAULT: '#C9A96E',
+          light: '#DCC292',
+        },
       },
       fontFamily: {
         // Headings: simple, modern and premium

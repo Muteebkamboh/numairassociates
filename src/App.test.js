@@ -4,18 +4,18 @@ import App from './App';
 test('renders the hero heading', () => {
   render(<App />);
   const heading = screen.getByRole('heading', { level: 1 });
-  expect(heading).toHaveTextContent(/spaces to live\. places to belong\. value for generations\./i);
+  expect(heading).toHaveTextContent(/find the right plot\. invest with confidence\./i);
 });
 
-test('renders six projects, four services and the CEO section', () => {
+test('renders six projects, six services and the CEO section', () => {
   render(<App />);
   const projects = document.getElementById('projects');
   expect(within(projects).getAllByRole('article')).toHaveLength(6);
 
   const services = document.getElementById('services');
-  expect(within(services).getAllByRole('listitem')).toHaveLength(4);
+  expect(within(services).getAllByRole('listitem')).toHaveLength(6);
 
-  expect(screen.getByRole('heading', { name: 'Numair' })).toBeInTheDocument();
+  expect(screen.getByRole('heading', { name: 'Numair Naseer Khan' })).toBeInTheDocument();
 });
 
 test('hero has no featured property card and the navbar shows the logo', () => {

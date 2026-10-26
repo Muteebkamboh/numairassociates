@@ -3,7 +3,9 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Stats from './components/Stats';
 import Philosophy from './components/Philosophy';
+import PlotGuide from './components/PlotGuide';
 import Leadership from './components/Leadership';
+import Consultation from './components/Consultation';
 import Projects from './components/Projects';
 import Services from './components/Services';
 import Contact from './components/Contact';
@@ -25,8 +27,10 @@ function App() {
           <Hero />
           <Stats />
           <Philosophy />
-          <Leadership />
+          <PlotGuide />
           <Projects />
+          <Leadership />
+          <Consultation />
           <Services />
           <Contact />
         </main>

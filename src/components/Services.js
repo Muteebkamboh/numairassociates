@@ -8,7 +8,7 @@ function ServiceCard({ service }) {
     <a
       href="#contact"
       aria-label={`${service.title}: enquire about this service`}
-      className="group flex h-full flex-col border border-charcoal/10 bg-ivory p-8 transition-all duration-500 ease-out hover:-translate-y-1 hover:border-charcoal/25 hover:bg-paper sm:p-10 lg:p-12"
+      className="group flex h-full flex-col border border-charcoal/10 bg-ivory p-8 transition-all duration-500 ease-out hover:-translate-y-1 hover:border-charcoal/25 hover:bg-paper sm:p-10 lg:p-9 xl:p-10"
     >
       <div className="flex items-start justify-between">
         <span className="flex h-14 w-14 items-center justify-center rounded-full border border-charcoal/15 text-charcoal transition-colors duration-500 group-hover:border-charcoal group-hover:bg-charcoal group-hover:text-ivory">
@@ -17,7 +17,7 @@ function ServiceCard({ service }) {
         <span className="text-[11px] tracking-label text-taupe">{service.number}</span>
       </div>
 
-      <h3 className="mt-12 font-display text-[24px] font-medium leading-tight tracking-[-0.02em] sm:mt-16 sm:text-[28px]">
+      <h3 className="mt-12 font-display text-[24px] font-medium leading-tight tracking-[-0.02em] sm:mt-14 sm:text-[26px]">
         {service.title}
       </h3>
       <p className="mt-4 max-w-sm text-[15px] leading-relaxed text-charcoal/70">{service.text}</p>
@@ -38,7 +38,7 @@ function Services() {
         <div className="grid gap-8 lg:grid-cols-12 lg:items-end">
           <SectionHeader
             eyebrow="Our Services"
-            title="Considered Services. Lasting Value."
+            title="Our Services"
             className="lg:col-span-7"
           />
           <Reveal delay={0.12} className="lg:col-span-4 lg:col-start-9">
@@ -48,10 +48,10 @@ function Services() {
           </Reveal>
         </div>
 
-        {/* Two spacious columns on tablet and desktop, one column on phones */}
-        <ul className="mt-14 grid gap-5 md:grid-cols-2 lg:mt-20 lg:gap-6">
+        {/* Three columns on large screens, two on tablets, one on phones */}
+        <ul className="mt-14 grid gap-5 md:grid-cols-2 lg:mt-20 lg:grid-cols-3 lg:gap-6">
           {services.map((service, index) => (
-            <Reveal key={service.number} as="li" delay={(index % 2) * 0.12} className="h-full">
+            <Reveal key={service.number} as="li" delay={(index % 3) * 0.12} className="h-full">
               <ServiceCard service={service} />
             </Reveal>
           ))}
