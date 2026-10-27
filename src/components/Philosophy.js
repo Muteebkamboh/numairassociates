@@ -7,12 +7,12 @@ function Philosophy() {
       <Container className="grid gap-16 lg:grid-cols-12 lg:gap-12">
         {/* Left: label, statement and a quiet architectural detail */}
         <div className="lg:col-span-5">
-          <Reveal>
+          <Reveal x={-40} y={0}>
             <Eyebrow className="text-charcoal/55">Our Philosophy</Eyebrow>
             <h2 className="heading-section mt-7 text-[26px] leading-[1.25] sm:text-[32px] lg:text-[34px]">
-              We believe every property decision deserves careful research, clear guidance, and a
+              We believe every Property decision deserves careful research, Clear guidance, and a
               long-term perspective —{' '}
-              <span className="text-charcoal/50">helping our clients choose opportunities with
+              <span className="text-charcoal/50">Helping our clients choose opportunities with
               confidence.</span>
             </h2>
           </Reveal>
@@ -31,7 +31,7 @@ function Philosophy() {
             <Reveal
               key={principle.number}
               as="li"
-              delay={index * 0.12}
+              delay={index * 0.1}
               className="grid grid-cols-[4.5rem_1fr] gap-x-4 border border-charcoal/10 bg-clay px-6 py-10 sm:grid-cols-[7rem_1fr] sm:px-8 lg:py-12"
             >
               <span className="font-display text-[40px] font-semibold leading-none text-[#8C7550] sm:text-[52px]">

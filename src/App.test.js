@@ -4,7 +4,7 @@ import App from './App';
 test('renders the hero heading', () => {
   render(<App />);
   const heading = screen.getByRole('heading', { level: 1 });
-  expect(heading).toHaveTextContent(/the right property\. a smarter investment\./i);
+  expect(heading).toHaveTextContent(/the right property\.? a smarter investment/i);
 });
 
 test('renders six projects, six services and the CEO section', () => {
@@ -50,4 +50,12 @@ test('menu button opens the site menu', () => {
   render(<App />);
   fireEvent.click(screen.getByRole('button', { name: /open menu/i }));
   expect(document.getElementById('site-menu')).toBeInTheDocument();
+});
+
+test('property category links prefill the enquiry form', () => {
+  render(<App />);
+  fireEvent.click(screen.getByRole('link', { name: /houses & residences/i }));
+  expect(screen.getByLabelText('Message')).toHaveValue('I would like to explore houses and residences.');
+  expect(screen.getByLabelText('Enquiry type')).toHaveValue('Buying a plot or property');
+  expect(screen.getByText('Purpose Before Property')).toBeInTheDocument();
 });

@@ -27,11 +27,11 @@ function App() {
           <Hero />
           <Stats />
           <Philosophy />
-          <PlotGuide />
           <Projects />
+          <Services />
+          <PlotGuide />
           <Leadership />
           <Consultation />
-          <Services />
           <Contact />
         </main>
         <Footer />

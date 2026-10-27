@@ -1,8 +1,16 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { contactDetails, enquiryTypes } from '../data/content';
 import { ArrowIcon, Container, Eyebrow, Reveal } from './ui';
 
 const emptyForm = { name: '', email: '', phone: '', interest: enquiryTypes[0], message: '' };
+
+const PREFILL_EVENT = 'enquiry:prefill';
+
+// Lets other sections open the form with an enquiry type and a starter message filled in.
+// Call it from a link to #contact; the link's normal jump to the form still happens.
+export function prefillEnquiry(detail) {
+  window.dispatchEvent(new CustomEvent(PREFILL_EVENT, { detail }));
+}
 
 // Returns an object of error messages, keyed by field name
 function validate(values) {
@@ -45,6 +53,20 @@ function Contact() {
   const [values, setValues] = useState(emptyForm);
   const [errors, setErrors] = useState({});
   const [status, setStatus] = useState('idle'); // 'idle' | 'invalid' | 'valid'
+
+  // Fill in the enquiry type and a starter message; never overwrite a message already typed
+  useEffect(() => {
+    const handlePrefill = (event) => {
+      const { interest, message } = event.detail || {};
+      setValues((current) => ({
+        ...current,
+        interest: enquiryTypes.includes(interest) ? interest : current.interest,
+        message: current.message.trim() ? current.message : message || '',
+      }));
+    };
+    window.addEventListener(PREFILL_EVENT, handlePrefill);
+    return () => window.removeEventListener(PREFILL_EVENT, handlePrefill);
+  }, []);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -91,7 +113,7 @@ function Contact() {
     <section id="contact" className="bg-ink py-20 text-ink-text lg:py-32">
       <Container className="grid gap-16 lg:grid-cols-12 lg:gap-12">
         <div className="lg:col-span-5">
-          <Reveal>
+          <Reveal x={-40} y={0}>
             <Eyebrow className="text-ink-muted">Enquiries</Eyebrow>
             <h2 className="heading-section mt-6">
               Let’s Find Your <br className="hidden sm:block" />
@@ -102,7 +124,7 @@ function Contact() {
             </p>
           </Reveal>
 
-          <Reveal delay={0.15}>
+          <Reveal delay={0.15} x={-40} y={0}>
             <dl className="mt-14 grid gap-6 border-t border-ink-line pt-8 text-[14px] sm:grid-cols-3 lg:grid-cols-1">
               {[
                 ['Email', contactDetails.email],
@@ -118,7 +140,7 @@ function Contact() {
           </Reveal>
         </div>
 
-        <Reveal delay={0.1} className="lg:col-span-6 lg:col-start-7">
+        <Reveal delay={0.1} x={40} y={0} className="lg:col-span-6 lg:col-start-7">
           <form
             noValidate
             onSubmit={handleSubmit}

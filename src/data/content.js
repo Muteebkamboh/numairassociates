@@ -206,29 +206,43 @@ export const hero = {
   imageAlt: 'Modern luxury residence with an infinity pool overlooking a city skyline at sunset',
 };
 
-// "Find a Plot That Fits Your Vision" section
-export const plotGuide = {
-  // Representative aerial photograph (public/images/photo3.png), not a specific development
-  image: `${process.env.PUBLIC_URL}/images/photo3.png`,
-  imageAlt: 'Aerial view of a planned residential community with tree-lined boulevards at sunset',
-  points: [
-    {
-      title: 'Purpose-Driven Selection',
-      text: 'Clarify whether your priority is building a home, holding an investment, or pursuing a development opportunity.',
-      icon: 'compass',
-    },
-    {
-      title: 'Location & Market Insight',
-      text: 'Evaluate relevant location factors, accessibility, surrounding development, market conditions, and potential considerations.',
-      icon: 'pin',
-    },
-    {
-      title: 'Guided Decision-Making',
-      text: 'Compare suitable options, ask the right questions, and move forward with greater clarity through personalized consultation.',
-      icon: 'seal',
-    },
-  ],
-};
+/*
+  "Discover the Right Property" section: the three property categories the firm advises on.
+  Photographs are representative, not specific listings. Each CTA opens the enquiry form with
+  `enquiry` pre-filled (see prefillEnquiry in components/Contact.js).
+*/
+export const propertyCategories = [
+  {
+    number: '01',
+    title: 'Plots & Land',
+    text: 'Explore land opportunities for future construction, personal use, or long-term investment with guidance on location, suitability, and market considerations.',
+    cta: 'Explore Land Opportunities',
+    image: `${process.env.PUBLIC_URL}/images/photo3.png`,
+    imageAlt: 'Aerial view of a planned community with residential plots and tree-lined boulevards at sunset',
+    imagePosition: 'object-[30%_center]',
+    enquiry: { interest: 'Buying a plot or property', message: 'I would like to explore plot and land opportunities.' },
+  },
+  {
+    number: '02',
+    title: 'Houses & Residences',
+    text: 'Discover residential options that align with your lifestyle, space requirements, priorities, and budget, with professional guidance throughout your search.',
+    cta: 'Explore Residences',
+    image: `${process.env.PUBLIC_URL}/images/image2.png`,
+    imageAlt: 'Contemporary family residence with warm interior lighting and a pool at dusk',
+    imagePosition: 'object-[center_40%]',
+    enquiry: { interest: 'Buying a plot or property', message: 'I would like to explore houses and residences.' },
+  },
+  {
+    number: '03',
+    title: 'High-Rise Living',
+    text: 'Explore contemporary apartments and high-rise developments for modern urban living, with attention to location, amenities, development details, and suitability.',
+    cta: 'Explore High-Rise Options',
+    image: projectHorizon,
+    imageAlt: 'Modern apartment tower with glass balconies',
+    imagePosition: 'object-center',
+    enquiry: { interest: 'Buying a plot or property', message: 'I would like to explore apartments and high-rise options.' },
+  },
+];
 
 // "Clarity Before Every Property Decision" section
 export const consultationSteps = [
@@ -284,8 +298,8 @@ export const properties = [
 export const principles = [
   {
     number: '01',
-    title: 'Architecture first',
-    text: 'Every strong investment begins with the right foundation. We help clients assess plot potential, location fundamentals, market conditions, and future value before making a decision.',
+    title: 'Purpose Before Property',
+    text: 'Every property journey starts with a clear purpose. We help you align your goals, priorities, and budget with the right real estate opportunities.',
   },
   {
     number: '02',

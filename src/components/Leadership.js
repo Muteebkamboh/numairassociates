@@ -66,7 +66,7 @@ function Leadership() {
 
         {/* Introduction */}
         <div className="lg:col-span-6 lg:col-start-7">
-          <Reveal delay={0.15}>
+          <Reveal delay={0.15} x={40} y={0}>
             <div className="flex items-center gap-4">
               <span className="h-px w-10 bg-gold" aria-hidden="true" />
               <Eyebrow className="text-gold">Leadership &amp; Vision</Eyebrow>
@@ -79,7 +79,7 @@ function Leadership() {
             </p>
           </Reveal>
 
-          <Reveal delay={0.3}>
+          <Reveal delay={0.3} x={40} y={0}>
             <blockquote className="mt-10 border-l border-gold/60 pl-6 font-display text-[21px] font-normal leading-snug tracking-[-0.015em] text-ivory/90 sm:text-[26px]">
               “{ceo.statement}”
             </blockquote>

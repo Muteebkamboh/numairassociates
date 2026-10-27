@@ -1,6 +1,6 @@
-import { motion } from 'framer-motion';
-import { hero } from '../data/content';
-import { ArrowIcon, Container, Eyebrow, ease } from './ui';
+import { motion } from "framer-motion";
+import { hero } from "../data/content";
+import { ArrowIcon, Container, Eyebrow, ease } from "./ui";
 
 // Text appears one line after another on page load
 const stagger = {
@@ -52,12 +52,23 @@ function Hero() {
 
       {/* Main copy, left aligned and vertically centred (top padding clears the navbar) */}
       <Container className="flex flex-1 items-center pb-16 pt-32 lg:pb-20 lg:pt-28">
-        <motion.div variants={stagger} initial="hidden" animate="visible" className="max-w-[760px]">
+        <motion.div
+          variants={stagger}
+          initial="hidden"
+          animate="visible"
+          className="max-w-[760px]"
+        >
           <motion.div variants={fadeUp}>
             <Eyebrow className="text-[10px] leading-relaxed text-gold sm:text-[11px]">
               {/* Each phrase stays on one line when the eyebrow wraps on phones */}
-              <span className="whitespace-nowrap">Plots&nbsp;&nbsp;/</span>{'  '}
-              <span className="whitespace-nowrap">Property Consultation&nbsp;&nbsp;/</span>{'  '}
+              <span className="whitespace-nowrap">
+                Property Solutions&nbsp;&nbsp;/
+              </span>
+              {"  "}
+              <span className="whitespace-nowrap">
+                Property Consultation&nbsp;&nbsp;/
+              </span>
+              {"  "}
               <span className="whitespace-nowrap">Investment Advisory</span>
             </Eyebrow>
           </motion.div>
@@ -67,7 +78,7 @@ function Hero() {
             // Slightly smaller on short laptop screens so the composition fits the first view
             className="heading-hero mt-6 text-[34px] text-[#F4EEE2] min-[400px]:text-[38px] sm:text-[50px] lg:text-[56px] xl:text-[62px] lg:[@media(max-height:760px)]:text-[52px]"
           >
-            <span className="block">The Right Property</span>{' '}
+            <span className="block">The Right Property</span>{" "}
             <span className="block text-gold">A Smarter Investment</span>
           </motion.h1>
 
@@ -75,8 +86,9 @@ function Hero() {
             variants={fadeUp}
             className="mt-7 max-w-[500px] text-[15px] leading-relaxed text-ink-text/75 sm:text-base"
           >
-            From plot selection to property consultation, we help you explore opportunities,
-            understand the market, and make informed real estate decisions with confidence.
+            From property selection to expert consultation, we help you explore
+            plots, homes, and investment opportunities with clarity, insight,
+            and confidence.
           </motion.p>
 
           <motion.div
@@ -87,7 +99,7 @@ function Hero() {
               href="#plots"
               className="group flex items-center justify-center gap-4 rounded-[2px] bg-gold px-8 py-4 text-[12px] font-medium uppercase tracking-[0.18em] text-ink transition-colors duration-300 hover:bg-gold-light sm:inline-flex"
             >
-              Explore Opportunities
+              Explore Our Services
               <ArrowIcon className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
             </a>
             <a
